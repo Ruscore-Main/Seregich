@@ -1,0 +1,17 @@
+﻿@{
+
+    ViewData["Title"] = "Первое задание";
+    Random rnd = new Random();
+    int firstNum = rnd.Next(1, 100);
+    int secondNum = rnd.Next(1, 100);
+    int thirdNum = rnd.Next(1, 100);
+    int[] allElements = new int[] { firstNum, secondNum, thirdNum };
+    Array.Sort(allElements);
+    int res = allElements[1];
+
+}
+
+<p>Первое число: @firstNum</p>
+<p>Второе число: @secondNum</p>
+<p>Третье число: @thirdNum</p>
+<p>Чиисло среднее из них: @res</p>

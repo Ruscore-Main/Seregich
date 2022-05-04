@@ -1,0 +1,47 @@
+﻿@using Seregich.Controllers
+
+<form method="post">
+    <input type="radio" value="Search" name="type" />
+    <span>Поиск</span> <br />
+
+    <input type="radio" value="Delete" name="type" />
+    <span>Удаление</span> <br />
+
+
+    <input type="text" name="inputText" placeholder="Номер книги для Удаление/Поиск" /><br /><br />
+
+    <input type="radio" value="Create" name="type" />
+    <span>Создать</span> <br />
+
+    <input type="text" name="bNumber" placeholder="Введите номер книги" /><br />
+    <input type="text" name="bAuthor" placeholder="Введите автора книги" /><br />
+    <input type="text" name="bYear" placeholder="Введите год книги" /><br />
+    <input type="text" name="bCategory" placeholder="Введите категорию книги" /><br />
+
+
+    <input type="submit" value="Отправить" />
+</form>
+<br />
+<br />
+<p>@ViewBag.Result</p>
+<br />
+<br />
+<table>
+    <tr>
+        <th>#</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Category</th>
+    </tr>
+
+    @foreach (Book b in Model)
+    {
+        <tr>
+            <td>@b.bookNumber</td>
+            <td>@b.Author</td>
+            <td>@b.year</td>
+            <td>@b.Category</td>
+
+        </tr>
+    }
+</table>
